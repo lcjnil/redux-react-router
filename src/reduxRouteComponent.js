@@ -1,4 +1,4 @@
-import { Component, PropTypes } from 'react';
+import { Component, PropTypes } from 'react/addons';
 import { TRANSITION_TO, REPLACE_WITH } from './actionTypes';
 import locationDidChange from './locationDidChange';
 import locationStateEquals from './locationStateEquals';
@@ -105,7 +105,7 @@ export default function reduxRouteComponent(s) {
     }
 
     render() {
-      return this.props.children;
+      return React.addons.cloneWithProps(this.props.children);
     }
   };
 }
